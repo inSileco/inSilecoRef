@@ -62,6 +62,7 @@ cases where DOIs are not available.
 ## `newDOI()`
 
 ```{r newDOI}
+library(inSilecoRef)
 newDOI(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
 ```
 
