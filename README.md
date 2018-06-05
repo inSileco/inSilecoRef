@@ -17,11 +17,11 @@ to build the *inSileco* bibliographic library using a list of DOIs.
 
 ### To do
 
-[ ] `insileco.bib` blog complete bibtex file
-[ ] `manual.bib` manual entries bibtex file
-[ ] `doi.RDS` data.frame, doi = character, keyword = character
-[ ] `newDOI()` function to insert new DOI in `doi.RDS` and `insileco.bib`
-[ ] `newManual()` function to crete new manual entry for `manual.bib`
+- \[ \] `insileco.bib` blog complete bibtex file
+- \[ \] `manual.bib` manual entries bibtex file
+- \[ \] `doi.RDS` data.frame, doi = character, keyword = character
+- \[ \] `newDOI()` function to insert new DOI in `doi.RDS` and `insileco.bib`
+- \[ \] `newManual()` function to crete new manual entry for `manual.bib`
 
 ### Example
 
