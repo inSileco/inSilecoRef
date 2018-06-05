@@ -1,38 +1,77 @@
-## inSileco bibliography
+<!--
 
-[![Build Status](https://travis-ci.org/inSileco/inSileco.github.io.svg?branch=dev)](https://travis-ci.org/inSileco/inSileco.github.io)
+setwd('/users/davidbeauchesne/dropbox/phd/inSilecoRef/')
+rmarkdown::render('./inSilecoRef.Rmd', 'md_document')
 
-### Overview
+-->
+Description
+===========
 
-This repo contains the tools and data used to generate bibliographies for the
-[*inSileco* blog](https://insileco.github.io/).
-In order to make group bibliography management easier and considering that
-*inSileco* members use different tools (*e.g.* Zotero & Mendeley), we decided
-to build the *inSileco* bibliographic library using a list of DOIs.
+This package contains the tools used to manage bibliographic data for
+the [*inSileco* blog](https://insileco.github.io/).
 
+Managing bibliographies in a group can be hard considering that
+individuals use different types of reference management tools such as
+[Zotero](https://www.zotero.org/) and
+[Mendeley](https://www.mendeley.com/). To simplify reference management
+on our blog and still allow blog members to use their own preferred
+reference management tools, we decided to build a centralized repo with
+a common `.bib` file and tools to update and validate this file.
 
-### Requirements
+Status
+------
 
-- `rcrossref`
+[![Build
+Status](https://travis-ci.org/inSileco/inSileco.github.io.svg?branch=dev)](https://travis-ci.org/inSileco/inSileco.github.io)
+
+Installation
+============
+
+The easiest way to install `inSilecoRef` is to use the
+[*devtools*](http://cran.r-project.org/web/packages/devtools/index.html)
+package:
+
+    install.packages("devtools")
+    devtools::install_github("inSileco/inSilecoRef")
+
+Main features
+=============
+
+The package offers two main functions. The main function, `newDOI()`
+uses digital object identifier (DOI) and takes advantage of
+functionalities offered by the
+[`rcrossref`](https://ropensci.org/tutorials/rcrossref_tutorial/)
+package. The second function, `newManual()` allows the user to create a
+manual entry in cases where DOIs are not available.
+
+`newDOI()`
+----------
 
 ### To do
 
-- \[ \] `insileco.bib` blog complete bibtex file
-- \[ \] `manual.bib` manual entries bibtex file
-- \[ \] `doi.RDS` data.frame, doi = character, keyword = character
-- \[ \] `newDOI()` function to insert new DOI in `doi.RDS` and `insileco.bib`
-- \[ \] `newManual()` function to crete new manual entry for `manual.bib`
+-   
+     `insileco.bib` blog complete bibtex file
+-   
+     `manual.bib` manual entries bibtex file
+-   
+     `doi.RDS` data.frame, doi = character, keyword = character
+-   
+     `newDOI()` function to insert new DOI in `doi.RDS` and
+    `insileco.bib`
+-   
+     `newManual()` function to crete new manual entry for `manual.bib`
 
 ### Example
 
-```r
-# Example of code to use
-ref <- rcrossref::cr_cn(dois = c("10.1126/science.169.3946.635", '10.1038/s41586-018-0151-x'), format = "bibtex")
-ref <- unlist(ref)
-cat(ref)
-write(ref, file = 'ref.bib')
-```
+    # Example of code to use
+    ref <- rcrossref::cr_cn(dois = c('10.1515/9781400881376','10.1086/414572'), format = "bibtex")
+    ref <- unlist(ref)
+    cat(ref)
+    write(ref, file = 'ref.bib')
 
 ### Material
 
-http://www.pauloldham.net/creating-a-bibliography-with-rcrossref/
+<http://www.pauloldham.net/creating-a-bibliography-with-rcrossref/>
+
+    create_package("/users/davidbeauchesne/dropbox/phd/cisl")
+    devtools::install_github('david-beauchesne/cisl')

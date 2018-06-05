@@ -1,0 +1,79 @@
+---
+title: "inSilecoRef"
+output:
+  md_document
+---
+
+<!--
+
+setwd('/users/davidbeauchesne/dropbox/phd/inSilecoRef/')
+rmarkdown::render('./README.Rmd', 'md_document')
+
+-->
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  fig.path = "inst/assets/img/",
+  comment = "R>> ",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 5,
+  fig.height = 5
+)
+```
+
+# Description
+
+This package contains the tools used to manage bibliographic data for the
+[*inSileco* blog](https://insileco.github.io/).
+
+Managing bibliographies in a group can be hard considering that individuals
+use different types of reference management tools such as
+[Zotero](https://www.zotero.org/) and [Mendeley](https://www.mendeley.com/).
+To simplify reference management on our blog and still allow blog members to
+use their own preferred reference management tools, we decided to build a
+centralized repo with a common `.bib` file and tools to update and validate
+this file.
+
+## Status
+
+[![Build Status](https://travis-ci.org/inSileco/inSileco.github.io.svg?branch=dev)](https://travis-ci.org/inSileco/inSileco.github.io)
+
+
+# Installation
+
+The easiest way to install `inSilecoRef` is to use the
+[*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("inSileco/inSilecoRef")
+```
+
+# Main features
+
+The package offers two main functions. The main function, `newDOI()` uses
+digital object identifier (DOI) and takes advantage of functionalities offered
+by the [`rcrossref`](https://ropensci.org/tutorials/rcrossref_tutorial/) package.
+The second function, `newManual()` allows the user to create a manual entry in
+cases where DOIs are not available.
+
+## `newDOI()`
+
+```{r newDOI}
+newDOI(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
+```
+
+
+### To do list
+
+- \[ \] `insileco.bib` blog complete bibtex file
+- \[ \] `manual.bib` manual entries bibtex file
+- \[ \] `newDOI()` function to insert new DOI in `doi.RDS` and `insileco.bib`
+- \[ \] `newManual()` function to crete new manual entry for `manual.bib`
+
+
+### Material
+
+http://www.pauloldham.net/creating-a-bibliography-with-rcrossref/
