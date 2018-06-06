@@ -3,12 +3,14 @@
 #' Imports and validates new entries for a DOI list
 #'
 #' @param DOI character vector of DOI to import
+#' @param bib character path to master .bib file, default is `inSilecoRef.bib`
 #'
 #' @keywords DOI
 #'
 #' @importFrom rcrossref cr_cn
 #' @importFrom RefManageR ReadBib
 #' @importFrom stringr str_locate
+#' @importFrom stringr str_detect
 #' @export
 #'
 #' @examples
@@ -26,8 +28,7 @@ newDOI <- function(DOI, bib = './inSilecoRef.bib') {
     # 5. Prompt user for confirmation of reference additions
     # 6. Reload and update inSilecoRef.bib as raw file
 
-
-
+  # Function
   # 1. Import .bib file
     inSilecoRef <- RefManageR::ReadBib(bib)
 
