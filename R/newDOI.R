@@ -72,17 +72,17 @@ newDOI <- function(DOI, bib = './inSilecoRef.bib') {
       }
     }
 
-  # 5. Report of changes made
-    if (sum(checkDOI) > 0) {
-      cat('The following DOI were not imported as they are already in the master .bib file: \n',
-          paste0(DOI[checkDOI], '\n'))
-      cat('\n')
-    }
-
-    if (sum(!checkDOI) > 0) {
-      cat('The following references were added to the master .bib file: \n')
-      cat(newRef)
-    }
+  # # 5. Report of changes made
+  #   if (sum(checkDOI) > 0) {
+  #     cat('The following DOI were not imported as they are already in the master .bib file: \n',
+  #         paste0(DOI[checkDOI], '\n'))
+  #     cat('\n')
+  #   }
+  #
+  #   if (sum(!checkDOI) > 0) {
+  #     cat('The following references were added to the master .bib file: \n')
+  #     cat(newRef)
+  #   }
 
   # 6. Reload and update inSilecoRef.bib as raw file
     # Thanks to https://stackoverflow.com/questions/9068397/import-text-file-as-single-character-string
