@@ -13,3 +13,5 @@ Depends:
     R (>= 3.0)
 Imports:
     rcrossref
+    RefManageR
+    stringr 
