@@ -2,20 +2,22 @@
 % Please edit documentation in R/newDOI.R
 \name{newDOI}
 \alias{newDOI}
-\title{Import and validate new DOI to DOI list.}
+\title{Import and validate new DOI to DOI lists}
 \usage{
 newDOI(DOI, bib = "./inSilecoRef.bib")
 }
 \arguments{
 \item{DOI}{character vector of DOI to import}
 
-\item{bib}{character path to master .bib file, default is `inSilecoRef.bib`}
+\item{bib}{character path to master .bib file, default is \code{inSilecoRef.bib}}
 }
 \description{
 Imports and validates new entries for a DOI list
 }
 \examples{
 # Example 1:
+\dontrun{
 newDOI(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
+}
 }
 \keyword{DOI}

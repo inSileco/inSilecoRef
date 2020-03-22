@@ -1,4 +1,4 @@
-#' Import and validate new DOI to DOI list.
+#' Import and validate new DOI to DOI lists
 #'
 #' Imports and validates new entries for a DOI list
 #'
@@ -9,13 +9,14 @@
 #'
 #' @importFrom rcrossref cr_cn
 #' @importFrom RefManageR ReadBib
-#' @importFrom stringr str_locate
-#' @importFrom stringr str_detect
+#' @importFrom stringr str_locate str_detect
 #' @export
 #'
 #' @examples
 #' # Example 1:
+#' \dontrun{
 #' newDOI(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
+#' }
 
 newDOI <- function(DOI, bib = './inSilecoRef.bib') {
   # Steps
@@ -40,10 +41,10 @@ newDOI <- function(DOI, bib = './inSilecoRef.bib') {
                          year = character(nRef),
                          stringsAsFactors = F)
 
-    for(i in 1:nRef) {
+    for(i in seq_len(nRef)) {
       bibTab$DOI[i] <- inSilecoRef[i]$doi # DOI
       bibTab$key[i] <- names(inSilecoRef[i]) # key
-      bibTab$family[i] <- inSilecoRef[i]$author[1]$family # family name of 1st author
+      bibTab$family[i] <- inSilecoRef[i]$author[1L]$family # family name of 1st author
       bibTab$year[i] <- inSilecoRef[i]$year # year of publication
     }
 
@@ -51,16 +52,16 @@ newDOI <- function(DOI, bib = './inSilecoRef.bib') {
     checkDOI <- DOI %in% bibTab$DOI
 
   # 4. if !DOI %in% inSilecoRef.bib
-    if (sum(!checkDOI) > 0) {
+    if (sum(!checkDOI)) {
       # 4.1 Import reference using rcrossref
       newRef <- rcrossref::cr_cn(dois = DOI[!checkDOI], format = "bibtex")
       newRef <- unlist(newRef)
 
       # 4.2 Check key
       nNewRef <- length(newRef)
-      for(i in 1:nNewRef) {
-        begChar <- stringr::str_locate(newRef[i], '(.*?)\\{')[2] + 1
-        endChar <- stringr::str_locate(newRef[i], '(.*?),')[2] - 1
+      for(i in seq_len(nNewRef)) {
+        begChar <- str_locate(newRef[i], '(.*?)\\{')[2] + 1
+        endChar <- str_locate(newRef[i], '(.*?),')[2] - 1
         key <- substr(newRef[i], begChar, endChar)
 
         # If key already exists, give a new key by adding a letter at the end

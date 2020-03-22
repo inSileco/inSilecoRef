@@ -4,15 +4,19 @@ Title: inSileco Bibliographic manager
 Description: This package contains the tools to manage bibliographies for the [inSileco blog](https://insileco.github.io/).
 Authors@R: c(
     person("David", "Beauchesne", email = "david.beauchesne@hotmail.com", role = c("aut", "cre")),
-    person("Kevin", "Cazelles", email = "kevin.cazelles@uoguelph.ca", role = "aut"))
-License: What license is it under?
-Encoding: UTF-8
-LazyData: true
-ByteCompile: true
+    person("Kevin", "Cazelles", email = "kevin.cazelles@gmail.com", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut"))
+    )
+License: GPL-3
 Depends:
     R (>= 3.0)
 Imports:
     rcrossref,
     RefManageR,
     stringr
-RoxygenNote: 6.1.0
+URL: https://github.com/inSileco/inSilecoRef, http://insileco.github.ioinSilecoMisc
+BugReports: https://github.com/inSileco/inSilecoRef/issues
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+RoxygenNote: 7.1.0
+Roxygen: list(markdown = TRUE)
