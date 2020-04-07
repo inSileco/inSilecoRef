@@ -7,23 +7,23 @@
 This package contains the tools used to manage bibliographic data for the
 [*inSileco* blog](https://insileco.github.io/).
 
-Managing bibliographies in a group can be hard considering that individuals
-use different types of reference management tools such as
-[Zotero](https://www.zotero.org/) and [Mendeley](https://www.mendeley.com/).
-To simplify reference management on our blog and still allow blog members to
-use their own preferred reference management tools, we decided to build a
-centralized repo with a master `.bib` file and tools to update and validate
-this file.
+Managing bibliographies in a group can be hard considering that individuals use
+different types of reference management tools such as
+[Zotero](https://www.zotero.org/) and [Mendeley](https://www.mendeley.com/). To
+simplify reference management on our blog and still allow blog members to use
+their own preferred reference management tools, we decided to build a
+centralized repo with a master `.bib` file and tools to update and validate this
+file.
 
 
 # Installation
 
 The easiest way to install `inSilecoRef` is to use the
-[*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
+[`remotes`](https://CRAN.R-project.org/package=remotes) package:
 
 ```R
-install.packages("devtools")
-devtools::install_github("inSileco/inSilecoRef")
+install.packages("remotes")
+remotes::install_github("inSileco/inSilecoRef")
 ```
 
 # Main features
@@ -79,6 +79,6 @@ R>>  }
 ### To do list
 
 - [ ] `manual.bib` manual entries bibtex file
-- [ ] `newManual()` function to crete new manual entry for `manual.bib`
+- [ ] `newManual()` function to create new manual entry for `manual.bib`
 - [ ] add status shields
 - [ ] eventually add a function that updates bib file to identify which posts are citing which reference
