@@ -18,9 +18,9 @@
 
 url_cran <- function(pkg = "") {
   if (pkg == "") {
-    "[](https://CRAN.R-project.org)"
+    "[CRAN](https://CRAN.R-project.org)"
   } else {
-    glue("[{pkg}](https://CRAN.R-project.org/package={pkg})")
+    glue("[`{pkg}`](https://CRAN.R-project.org/package={pkg})")
   }
 }
 
@@ -31,9 +31,9 @@ url_cran <- function(pkg = "") {
 
 url_bioc <- function(pkg = "") {
   if (pkg == "") {
-    "[](https://www.bioconductor.org/)"
+    "[Bioconductor](https://www.bioconductor.org/)"
   } else {
-    glue("[{pkg}](https://bioconductor.org/packages/{pkg}/)")
+    glue("[`{pkg}`](https://bioconductor.org/packages/{pkg}/)")
   }
 }
 
@@ -45,10 +45,10 @@ url_bioc <- function(pkg = "") {
 url_gh <- function(pkg = "", user = "cran") {
   if (pkg == "") {
     if (user == "") {
-      "[](https://github.com)"
+      "[GitHub](https://github.com)"
     } else glue("[{user}](https://github.com/{user})")
   } else {
-    glue("[{pkg}](https://github.com/{user}/{pkg})")
+    glue("[`{pkg}`](https://github.com/{user}/{pkg})")
   }
 }
 
