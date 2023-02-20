@@ -36,7 +36,7 @@ newDOI <- function(DOI, bib = './inSilecoRef.bib') {
                          key = character(nRef),
                          family = character(nRef),
                          year = character(nRef),
-                         stringsAsFactors = F)
+                         stringsAsFactors = FALSE)
 
     for(i in seq_len(nRef)) {
       bibTab$DOI[i] <- inSilecoRef[i]$doi # DOI
