@@ -1,7 +1,7 @@
 /content/post/goDebianTesting/assets/notuploaded
 /node_modules
 package-lock.json
-
+docs/
 
 # posts' index.html file
 content/post/*/index.html

@@ -1,3 +1,10 @@
 ^LICENSE\.md$
 inSilecoRef.bib
 ^\.github/workflows/R-CMD-check\.yaml$
+^\.github$
+^\.gitignore$
+^doc$
+^docs$
+^\.Rproj\.user$
+^.*\.Rproj$
+^README\.Rmd

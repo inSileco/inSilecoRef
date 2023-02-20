@@ -15,7 +15,7 @@ url_gh(pkg = "", user = "cran")
 \arguments{
 \item{pkg}{a package name.}
 
-\item{user}{a character string of the GitHub repository.}
+\item{user}{a GitHub user name or a GitHub organisation name.}
 }
 \value{
 A link to the CRAN's canonical URL for a given package formatted in Markdown.
@@ -26,14 +26,14 @@ Get an URL for a specific package (Markdown style).
 }
 \section{Functions}{
 \itemize{
-\item \code{url_bioc}: A link to the Bioconductor's short URL for a given
+\item \code{url_bioc()}: A link to the Bioconductor's short URL for a given
 package formatted in Markdown. Note that is \code{pkg = ""} a link to Bioconductor
 is returned.
 
-\item \code{url_gh}: A link to the GitHub repository for a given package.
+\item \code{url_gh()}: A link to the GitHub repository for a given package.
 If \code{pkg = ""} a link to the user account in returned and if \code{pkg = ""} and
-}}
 
+}}
 \examples{
 url_cran("")
 url_cran("ps")

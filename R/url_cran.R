@@ -3,7 +3,7 @@
 #' Get an URL for a specific package (Markdown style).
 #'
 #' @param pkg a package name.
-#' @param user a character string of the GitHub repository.
+#' @param user a GitHub user name or a GitHub organisation name.
 #'
 #' @return
 #' A link to the CRAN's canonical URL for a given package formatted in Markdown.
@@ -15,11 +15,11 @@
 #' url_cran("ps")
 #' url_gh("inSilecoRef", "inSileco")
 #' url_bioc("CRImage")
-
 url_cran <- function(pkg = "") {
   if (pkg == "") {
     "[CRAN](https://CRAN.R-project.org)"
   } else {
+    stopifnot(is_package_name_valid(pkg))
     glue("[`{pkg}`](https://CRAN.R-project.org/package={pkg})")
   }
 }
@@ -33,6 +33,7 @@ url_bioc <- function(pkg = "") {
   if (pkg == "") {
     "[Bioconductor](https://www.bioconductor.org/)"
   } else {
+    stopifnot(is_package_name_valid(pkg))
     glue("[`{pkg}`](https://bioconductor.org/packages/{pkg}/)")
   }
 }
@@ -46,9 +47,15 @@ url_gh <- function(pkg = "", user = "cran") {
   if (pkg == "") {
     if (user == "") {
       "[GitHub](https://github.com)"
-    } else glue("[{user}](https://github.com/{user})")
+    } else {
+      glue("[{user}](https://github.com/{user})")
+    }
   } else {
     glue("[`{pkg}`](https://github.com/{user}/{pkg})")
   }
 }
 
+
+is_package_name_valid <- function(x) {
+  grepl("^[[:alnum:]][[:alnum:]\\.]*[[:alnum:]]$", x)
+}
