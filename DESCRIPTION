@@ -1,5 +1,5 @@
 Package: inSilecoRef
-Version: 0.0.1.9000
+Version: 0.0.2
 Title: inSileco Bibliographic manager
 Description: This package contains the tools to manage bibliographies for the inSileco blog (<https://insileco.github.io/>).
 Authors@R: c(
@@ -14,6 +14,8 @@ Imports:
     rcrossref,
     RefManageR,
     stringr
+Suggests: 
+    testthat (>= 3.0.0)
 URL: https://github.com/inSileco/inSilecoRef, http://insileco.github.io
 BugReports: https://github.com/inSileco/inSilecoRef/issues
 Encoding: UTF-8
@@ -21,6 +23,4 @@ LazyData: true
 ByteCompile: true
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
-Suggests: 
-    testthat (>= 3.0.0)
 Config/testthat/edition: 3
