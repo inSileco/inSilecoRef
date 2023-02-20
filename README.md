@@ -1,5 +1,5 @@
 # inSilecoRef
-[![R build status](https://github.com/inSileco/inSilecoRef/workflows/R-CMD-check/badge.svg)](https://github.com/inSileco/inSilecoRef/actions)
+[![R CMD Check](https://github.com/inSileco/inSilecoRef/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/inSileco/inSilecoRef/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 # Description

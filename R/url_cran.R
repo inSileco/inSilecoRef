@@ -1,4 +1,4 @@
-#' URL for a specific package
+#' URL for R packages
 #'
 #' Get an URL for a specific package (Markdown style).
 #'

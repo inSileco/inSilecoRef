@@ -8,3 +8,4 @@ inSilecoRef.bib
 ^\.Rproj\.user$
 ^.*\.Rproj$
 ^README\.Rmd
+^\.vscode$

@@ -4,7 +4,7 @@
 \alias{url_cran}
 \alias{url_bioc}
 \alias{url_gh}
-\title{URL for a specific package}
+\title{URL for R packages}
 \usage{
 url_cran(pkg = "")
 

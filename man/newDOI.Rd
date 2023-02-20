@@ -17,7 +17,7 @@ Imports and validates new entries for a DOI list
 \examples{
 # Example 1:
 \dontrun{
-newDOI(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
+newDOI(DOI = c("10.1016/j.tree.2016.10.011", "10.1890/130230", "10.1515/9781400881376"))
 }
 }
 \keyword{DOI}
