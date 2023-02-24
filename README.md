@@ -1,5 +1,6 @@
 # inSilecoRef
 [![R CMD Check](https://github.com/inSileco/inSilecoRef/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/inSileco/inSilecoRef/actions/workflows/R-CMD-check.yaml)
+[![pkgdown](https://github.com/inSileco/inSilecoRef/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/inSileco/inSilecoRef/actions/workflows/pkgdown.yaml)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 # Description
@@ -31,7 +32,7 @@ remotes::install_github("inSileco/inSilecoRef")
 The package offers two main functions. The main function, `newDOI()` uses
 digital object identifier (DOI) and takes advantage of functionalities offered
 by the [`rcrossref`](https://github.com/ropensci/rcrossrefs) and
-[`RefManageR`](https://github.com/ropensci/RefManageR) packages.
+[`bibtex`](https://github.com/ropensci/bibtex) packages.
 The second function, `newManual()` allows users to create a manual entry in
 cases where DOIs are not available.
 
@@ -39,7 +40,7 @@ cases where DOIs are not available.
 
 ```R
 library(inSilecoRef)
-newDOI(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
+add_(DOI = c('10.1016/j.tree.2016.10.011','10.1890/130230','10.1515/9781400881376'))
 ```
 
 <br/>
@@ -80,5 +81,4 @@ R>>  }
 
 - [ ] `manual.bib` manual entries bibtex file
 - [ ] `newManual()` function to create new manual entry for `manual.bib`
-- [ ] add status shields
 - [ ] eventually add a function that updates bib file to identify which posts are citing which reference
