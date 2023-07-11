@@ -33,7 +33,8 @@ add_doi_reference <- function(doi, bib = "./inSilecoRef.bib") {
 
   # 2. Check wheteher dois are already in the bib file
   if (length(ref)) {
-    doi <- doi[!doi %in% unlist(ref$doi)]
+    # DOI names are case insensitive
+    doi <- doi[!tolower(doi) %in% tolower(unlist(ref$doi))]
   }
 
   # 4. if !DOI %in% inSilecoRef.bib

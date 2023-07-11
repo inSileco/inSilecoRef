@@ -1,5 +1,5 @@
 Package: inSilecoRef
-Version: 0.1.0
+Version: 0.1.1
 Title: inSileco Bibliographic manager
 Description: This package contains the tools to manage bibliographies for the inSileco blog (<https://blog.insileco.io/>).
 Authors@R: c(

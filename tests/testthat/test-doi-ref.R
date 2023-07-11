@@ -2,7 +2,8 @@ bib <- "test.bib"
 dois <- c(
     "10.1016/j.tree.2016.10.011",
     "10.1890/130230",
-    "10.1515/9781400881376"
+    "10.1515/9781400881376",
+    "10.1007/BF01386390" # no case sensitivity
 )
 
 suppressMessages({
@@ -15,7 +16,7 @@ suppressMessages({
 
     test_that("add new doi", {
         res2 <- add_doi_reference(dois, bib)
-        expect_equal(length(res2), 3)
+        expect_equal(length(res2), 4)
         res3 <- add_doi_reference(dois[1], bib)
         expect_identical(res2, res3)
     })
